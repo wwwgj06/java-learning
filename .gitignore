@@ -1,0 +1,17 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Java and Maven
+*.class
+target/
+
+# macOS
+.DS_Store
+
+# Local environment
+.env
