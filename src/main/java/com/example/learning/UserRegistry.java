@@ -30,4 +30,19 @@ public class UserRegistry {
     public int size() {
         return users.size();
     }
+
+    public User findByUsername(String username){
+        return users.get(username);
+    }
+
+    public User findRequiredByUsername(String username){
+        User user = users.get(username);
+        if(user==null){
+            throw new UserNotFoundException("用户不存在："+username);
+        }
+         return user;
+    }
+    public boolean deleteByUsername(String username){
+        return users.remove(username) != null;
+    }
 }
