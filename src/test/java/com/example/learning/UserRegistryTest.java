@@ -47,7 +47,8 @@ class UserRegistryTest {
         assertEquals(0, registry.size());
     }
 
-    @Test void shouldFindUserByUsername(){
+    @Test
+    void shouldFindUserByUsername(){
         UserRegistry registry = new UserRegistry();
         registry.register("zhangsan","123456");
 
@@ -58,7 +59,7 @@ class UserRegistryTest {
     }
 
     @Test 
-    void shouldReturnNullWgenUserDoesNotExist(){
+    void shouldReturnNullWhenUserDoesNotExist(){
         UserRegistry registry = new UserRegistry();
 
         User user = registry.findByUsername("not-exist");
@@ -66,7 +67,7 @@ class UserRegistryTest {
     } 
 
     @Test 
-    void shouldDelectUserSuccessfully(){
+    void shouldDeleteUserSuccessfully(){
         UserRegistry registry = new UserRegistry();
         registry.register("zhangsan","123456");
         boolean result = registry.deleteByUsername("zhangsan");

@@ -31,23 +31,24 @@ public class UserRegistry {
         return users.size();
     }
 
-    public User findByUsername(String username){
+    public User findByUsername(String username) {
         return users.get(username);
     }
-public User findRequiredByUsername(String username)
-        throws UserNotFoundException {
 
-    User user = users.get(username);
+    public User findRequiredByUsername(String username)
+            throws UserNotFoundException {
 
-    if (user == null) {
-        throw new UserNotFoundException(
-                "用户不存在：" + username
-        );
+        User user = users.get(username);
+
+        if (user == null) {
+            throw new UserNotFoundException(
+                    "用户不存在：" + username);
+        }
+
+        return user;
     }
 
-    return user;
-}
-    public boolean deleteByUsername(String username){
+    public boolean deleteByUsername(String username) {
         return users.remove(username) != null;
     }
 }

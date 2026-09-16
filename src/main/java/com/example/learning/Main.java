@@ -7,6 +7,19 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         UserRegistry registry = new UserRegistry();
 
+        System.out.println();
+System.out.println("===== 用户查询异常处理 =====");
+
+try {
+    // 当前还没有注册这个用户，所以会抛出异常
+    User user = registry.findRequiredByUsername("not-exist");
+
+    System.out.println("查询成功：" + user.getUsername());
+} catch (UserNotFoundException exception) {
+    // Main 负责把异常转换为用户能看懂的提示
+    System.out.println("查询失败：" + exception.getMessage());
+}
+
         System.out.println("===== 用户注册 =====");
 
         while (true) {
