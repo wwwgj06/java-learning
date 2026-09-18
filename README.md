@@ -66,3 +66,11 @@ git push
 - Git 版本管理；
 - GitHub 远程备份；
 - 项目文档编写。
+
+
+## 查看修改
+
+保存后执行：
+
+```bash
+git status
